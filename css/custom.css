@@ -533,70 +533,79 @@ a:focus{
 /*****   04. Services area css    *****/
 /**************************************/
 
-.services{
-	padding: 60px 0;
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+.abel-regular {
+  font-family: "Abel", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.services {
+  padding: 60px 0;
 }
 
 .service-single {
-    padding: 20px;
-    border-radius: 6px;
-    background: #5b1f00;
-    background: linear-gradient(to top, #ffd398, #db9f4f);
-    background: -webkit-linear-gradient(to top, #5b1f00, #db9f4f);
-    background: -moz-linear-gradient(to top, #5b1f00, #db9f4f);
-    background: -o-linear-gradient(to top, #5b1f00, #db9f4f);
+  padding: 20px;
+  border-radius: 6px;
+  background-color: #ffd398; /* Color de fondo actualizado */
+  margin-bottom: 20px;
+  height: 450px; /* Ajusta la altura según sea necesario */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribuye el espacio de manera uniforme */
 }
 
-.service-skyblue {
-    background: #ffde59;
-    background: linear-gradient(to top, #ffd398, #db9f4f);
-    background: -webkit-linear-gradient(to top, #5b1f00, #db9f4f);
-    background: -moz-linear-gradient(to top, #5b1f00, #db9f4f);
-    background: -o-linear-gradient(to top, #5b1f00, #db9f4f);
+.service-header {
+  position: relative;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
-.service-pink {
-    background: #ffde59;
-    background: linear-gradient(to top, #ffd398, #db9f4f);
-    background: -webkit-linear-gradient(to top, #5b1f00, #db9f4f);
-    background: -moz-linear-gradient(to top, #5b1f00, #db9f4f);
-    background: -o-linear-gradient(to top, #5b1f00, #db9f4f);
+.service-header .image-box {
+  margin: 0 auto;
+  width: 60px; /* Tamaño de las imágenes */
+  height: 60px;
+  overflow: hidden;
 }
 
-.service-blue {
-    background: #ffde59;
-    background: linear-gradient(to top, #ffd398, #db9f4f);
-    background: -webkit-linear-gradient(to top, #5b1f00, #db9f4f);
-    background: -moz-linear-gradient(to top, #5b1f00, #db9f4f);
-    background: -o-linear-gradient(to top, #5b1f00, #db9f4f);
+.service-header .service-image {
+  width: 100%;
+  height: auto;
 }
 
-.service-header{
-	position: relative;
-	margin-bottom: 30px;
+.service-header h3 {
+  color: #5b1f00; /* Cambiado para coincidir con el esquema de colores */
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5em;
+  margin-top: 10px;
+  font-family: "Abel", sans-serif;
 }
 
-.service-header .icon-box{
-	font-size: 50px;
-	color: #fff;
-	position: absolute;
-	right: 0;
-	top: 0;
-	line-height: 1em;
+.service-body {
+  color: #5b1f00; /* Cambiado para coincidir con el esquema de colores */
+  font-size: 14px;
+  font-family: "Abel", sans-serif;
+  margin-bottom: 0;
+  flex-grow: 1;
 }
 
-.service-header h3{
-	color: #fff;
-	padding-right: 60px;
-	font-size: 18px;
-	font-weight: 500;
-	line-height: 1.5em;
+.service-body ul {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-left: 20px;
 }
 
-.service-body p{
-	color: #fff;
-	font-size: 14px;
-	margin-bottom: 0;
+.btn-download {
+  background-color: #5b1f00; /* Color del botón */
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: "Abel", sans-serif;
+  text-align: center;
+  margin-top: auto; /* Empuja el botón hacia la parte inferior */
 }
 
 /*****************************************/
@@ -979,6 +988,14 @@ a:focus{
 }
 
 .screenshot-slide{
+	text-align: center;
+}
+
+.screenshots .screenshot-slide p {
+    text-align: center;
+}
+
+.screenshots .section-title p	{
 	text-align: center;
 }
 
