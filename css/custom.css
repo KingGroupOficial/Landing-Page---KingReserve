@@ -47,6 +47,10 @@ h6{
 	font-weight: 700;
 }
 
+p{
+	text-align: justify;
+}
+
 img{
 	max-width: 100%;
 }
@@ -377,6 +381,47 @@ a:focus{
 .sticky-header .navbar-nav>li>a{
 	color: #fff;
 }
+
+/************************************/
+/***** 02.1. Hero area css  *****/
+/************************************/
+
+#hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 99.95vh;
+    color: #ffff;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+	),url("../images/heroprincipal.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+
+.cinzel-regular {
+	font-family: "Cinzel", serif;
+	font-optical-sizing: auto;
+	font-weight:900;
+	font-style: normal;
+}
+
+#hero h1{
+    color: #ffff;
+    font-family: "Cinzel";
+	font-size: 100px; 	
+}
+
+#hero button{
+    font-size: 1.75em;
+}
+
 
 /************************************/
 /*****   03. Slider area css    *****/
