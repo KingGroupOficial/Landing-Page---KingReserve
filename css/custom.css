@@ -10,19 +10,15 @@
 02. CSS del área de Navegación
 03. CSS del área del Slider
 04. CSS del área de Servicios
-05. CSS del área de Video Introductorio
 06. CSS del área de Resumen
 07. CSS del área de Cómo Funciona
 08. CSS del área de Características Asombrosas
 09. CSS del área de Precios
-10. CSS del área de Capturas de Pantalla
-11. CSS del área de Testimonios
 12. CSS del área de Preguntas Frecuentes
 13. CSS del área de Seguimiento en Redes Sociales
 14. CSS del área de Descarga de Aplicaciones
 15. CSS del área de Contáctanos
 16. CSS del área del Pie de Página
-17. Pantallas de Medios
 -------------------------------------------------------------------------------------- */
 
 
@@ -232,17 +228,18 @@ a:focus{
 	margin-bottom: 0;
 }
 
-.navbar-brand{
-	padding: 16px 15px 0;
-	height: auto;
-	transition: all 0.3s ease-out;
-	-webkit-transition: all 0.3s ease-out;
-	-moz-transition: all 0.3s ease-out;
+.navbar-brand {
+    padding: 16px 15px 10;
+    height: auto;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
 }
 
-.navbar-brand img{
-	transition: all 0.3s;
-	height: 60px;
+.navbar-brand img {
+    transition: all 0.3s;
+    height: 70px; 
+    width: auto; 
 }
 
 .navbar-default{
