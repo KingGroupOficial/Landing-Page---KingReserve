@@ -24,6 +24,26 @@
 	<!-- Swiper's CSS -->
 	<link rel="stylesheet" href="css/swiper.min.css">
 	<!-- Slick nav css -->
+    <!-- Incluye los scripts de Firebase y SweetAlert -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCtZ3rB5QSBtjrOXhlF2LZzUrW_rDv4gg8",
+            authDomain: "micasita2024-01.firebaseapp.com",
+            projectId: "micasita2024-01",
+            storageBucket: "micasita2024-01.appspot.com",
+            messagingSenderId: "311455173144",
+            appId: "1:311455173144:web:d40e5a0f759c832bd2516d"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+    </script>
+
 	<link rel="stylesheet" href="css/slicknav.css">
 	<!-- Animated css -->
 	<link href="css/animate.css" rel="stylesheet">
@@ -33,7 +53,7 @@
 	<link href="css/custom.css" rel="stylesheet" media="screen">
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="images/icono.png" type="image/x-icon">
-
+    
 </head>
 
 <body data-spy="scroll" data-target="#navigation" data-offset="71">
@@ -623,56 +643,95 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title wow fadeInUp">
-                    <h2>Contacta al Desarrollador</h2>
+                    <h2><br> Contacta al Desarrollador</h2>
                     <p>¿Tienes una pregunta, una observación o una solicitud de colaboración? Envíanos un mensaje.</p>
                 </div>
             </div>
         </div>
 
-
-        
-            <div class="col-md-12">
-                <!-- Contact form start -->
-                <div class="contact-form">
-                    <form id="contactForm" action="" method="post" data-toggle="validator">
-                        <div class="row">
-                            <div class="form-group col-md-6 col-sm-12">
-                                <input type="text" name="first_name" id="first_name" class="form-control"
-                                    placeholder="Nombres" required>
-                                <div class="help-block with-errors"></div>
-                            </div>
-
-                            <div class="form-group col-md-6 col-sm-12">
-                                <input type="text" name="last_name" id="last_name" class="form-control"
-                                    placeholder="Apellidos" required>
-                                <div class="help-block with-errors"></div>
-                            </div>
-
-                            <div class="form-group col-md-12 col-sm-12">
-                                <input type="email" name="email" id="email" class="form-control"
-                                    placeholder="Correo Electrónico" autocomplete="email" required>
-                                <div class="help-block with-errors"></div>
-                            </div>
-
-                            <div class="form-group col-md-12 col-sm-12">
-                                <textarea rows="6" name="message" id="message" class="form-control"
-                                    placeholder="¿Cómo podemos ayudarte?" required></textarea>
-                                <div class="help-block with-errors"></div>
-                            </div>
-
-                            <div class="col-md-12 col-sm-12 text-center">
-                                <button type="submit" class="btn-custom" title="Enviar tu mensaje!">Enviar
-                                    Mensaje</button>
-                                <div id="msgSubmit" class="h3 text-left hidden"></div>
-                            </div>
+        <div class="col-md-12">
+            <!-- Contact form start -->
+            <div class="contact-form">
+                <form id="contactForm" action="" method="post" data-toggle="validator">
+                    <div class="row">
+                        <div class="form-group col-md-6 col-sm-12">
+                            <input type="text" name="first_name" id="first_name" class="form-control"
+                                placeholder="Nombres" required>
+                            <div class="help-block with-errors"></div>
                         </div>
-                    </form>
-                </div>
-                <!-- Contact Form end -->
+
+                        <div class="form-group col-md-6 col-sm-12">
+                            <input type="text" name="last_name" id="last_name" class="form-control"
+                                placeholder="Apellidos" required>
+                            <div class="help-block with-errors"></div>
+                        </div>
+
+                        <div class="form-group col-md-12 col-sm-12">
+                            <input type="email" name="email" id="email" class="form-control"
+                                placeholder="Correo Electrónico" autocomplete="email" required>
+                            <div class="help-block with-errors"></div>
+                        </div>
+
+                        <div class="form-group col-md-12 col-sm-12">
+                            <textarea rows="6" name="message" id="message" class="form-control"
+                                placeholder="¿Cómo podemos ayudarte?" required></textarea>
+                            <div class="help-block with-errors"></div>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 text-center">
+                            <button type="submit" class="btn-custom" title="Enviar tu mensaje!">Enviar
+                                Mensaje</button>
+                            <div id="msgSubmit" class="h3 text-left hidden"></div>
+                        </div>
+                    </div>
+                </form>
             </div>
+            <!-- Contact Form end -->
+        </div>
     </div>
+
+    
+    <script>
+
+        const contactForm = document.querySelector('form');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Ajusta los IDs de los campos aquí
+            const nombre = document.getElementById('first_name').value;
+            const apellido = document.getElementById('last_name').value;
+            const email = document.getElementById('email').value;
+            const mensaje = document.getElementById('message').value;
+
+            db.collection('contactos').add({
+                nombre: nombre,
+                apellido: apellido,
+                email: email,
+                mensaje: mensaje,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            }).then(() => {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Mensaje enviado',
+                    text: 'Tu mensaje ha sido enviado con éxito.',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                contactForm.reset();
+            }).catch((error) => {
+                console.error('Error al enviar el mensaje: ', error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Hubo un error al enviar el mensaje.',
+                });
+            });
+        });
+    </script>
 </section>
 <!-- Sección de Contáctenos Termina -->
+
 
 	<!-- Footer section starts -->
 	<footer class="footer">

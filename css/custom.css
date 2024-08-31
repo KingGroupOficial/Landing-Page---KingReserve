@@ -1300,6 +1300,11 @@ a:focus{
 	padding: 40px 0 100px;
 }
 
+.contact-us .section-title p{
+	text-align: Center;
+	margin-bottom: 40px;
+}
+
 .contact-form{
 	max-width: 480px;
 	margin: 0 auto;
