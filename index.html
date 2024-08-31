@@ -24,6 +24,26 @@
 	<!-- Swiper's CSS -->
 	<link rel="stylesheet" href="css/swiper.min.css">
 	<!-- Slick nav css -->
+    <!-- Incluye los scripts de Firebase y SweetAlert -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyCtZ3rB5QSBtjrOXhlF2LZzUrW_rDv4gg8",
+            authDomain: "micasita2024-01.firebaseapp.com",
+            projectId: "micasita2024-01",
+            storageBucket: "micasita2024-01.appspot.com",
+            messagingSenderId: "311455173144",
+            appId: "1:311455173144:web:d40e5a0f759c832bd2516d"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+    </script>
+
 	<link rel="stylesheet" href="css/slicknav.css">
 	<!-- Animated css -->
 	<link href="css/animate.css" rel="stylesheet">
@@ -33,7 +53,7 @@
 	<link href="css/custom.css" rel="stylesheet" media="screen">
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="images/icono.png" type="image/x-icon">
-
+    
 </head>
 
 <body data-spy="scroll" data-target="#navigation" data-offset="71">
@@ -59,7 +79,7 @@
             <div class="navbar-header">
                 <!-- Logo comienza -->
                 <a class="navbar-brand" href="index-2.html">
-					<img src="images/icono-2.png" width="200px" height="100px" alt="Logo" />
+					<img src="images/logoletras.png"   alt="Logo" />
 				</a>
                 <!-- Logo Termina -->
 
@@ -72,7 +92,7 @@
             <!-- Navegación comienza -->
             <div class="navbar-collapse collapse" id="navigation">
                 <ul class="nav navbar-nav navbar-right main-navigation" id="main-menu">
-                    <li class="active"><a href="#home">Inicio</a></li>
+                    <li class="active"><a href="#hero">Inicio</a></li>
                     <li><a href="#overview">Resumen</a></li>
                     <li><a href="#hotitworks">Cómo funciona</a></li>
                     <li><a href="#features">Características</a></li>
@@ -86,7 +106,9 @@
     </nav>
 </header>
 <!-- Sección de Encabezado Termina-->
-
+<section id="hero">
+    <h1>REVOLUCION <br>HOTELERA</h1>
+</section>
 	<!-- Banner Section Starts -->
 	<section class="banner" id="home">
 		<div class="container">
@@ -94,7 +116,7 @@
 				<div class="col-md-6 col-sm-6">
 					<!-- Header image start -->
 					<div class="banner-image wow fadeInLeft">
-						<img src="images/logo2.png" alt="" />
+						<img src="images/logoresumen.png" alt="" />
 					</div>
 					<!-- Header image end -->
 				</div>
@@ -102,9 +124,10 @@
 				<div class="col-md-6 col-sm-6">
 					<!-- Header Content start -->
 					<div class="header-content wow fadeInUp">
-							<h4 class="main-color">Innovación y Eficiencia al Alcance de tu Mano</h4>  
-							<h2>KingReserve:<br> REVOLUCION  <br>HOTELERA</h2>  
-							<p>Descubre KingReserve, nuestra plataforma principal permite 
+							<h4 class="main-color">Somos</h4>  
+							<h2>KingGroup</h2>  
+							<p>El equipo de desarrollo quien se encarga de poder gestionar las nuevas versiones demuestro nuevo prodcuto.
+                                Descubre KingReserve, nuestra plataforma principal permite 
 								a los hoteles gestionar sus operaciones con una eficiencia sin precedentes,
 								 mejorando la experiencia de cada huésped. KingReserve no es solo una herramienta 
 								 para administrar reservas y personal; es una solución integral que ofrece servicios 
@@ -217,8 +240,7 @@
                     <div class="icon-box">
                         <i class="flaticon-login"></i>
                     </div>
-
-                    <h3>Crea una cuenta gratuita</h3>
+                    <h3>Crea <br>una cuenta gratuita</h3>
                     <p>Regístrate rápida y fácilmente para comenzar a gestionar tus reservas de hotel. ¡Solo unos pocos clics y estarás listo!</p>
                     <a href="">Saber Más</a> 
                 </div>
@@ -232,7 +254,7 @@
 						<i class="flaticon-eye-tracking"></i>
                     </div>
 
-                    <h3>Gestión de Personal</h3>
+                    <h3>Gestión de <br> Personal</h3>
                     <p>Optimiza la administración del personal de tu hotel, asignando tareas, gestionando horarios y mejorando la eficiencia operativa.</p>
                     <a href="">Saber Más</a>
                 </div>
@@ -247,7 +269,7 @@
                     </div>
 
                     <h3>Administración de Reservas y Estadísticas Personalizadas</h3>
-                    <p>Administra todas tus reservas de manera centralizada y accede a estadísticas personalizadas para mejorar la toma de decisiones.</p>
+                    <p>Administra todas tus reservas de manera centralizada y accede a estadísticas personalizadas para  la toma de decisiones.</p>
                     <a href="">Saber Más</a>
                 </div>
                 <!-- Cómo Funciona Individual Termina -->
@@ -342,24 +364,28 @@
             <div class="col-md-6">
                 <!-- Plan Gratuito Comienza -->
                 <div class="service-single service-skyblue wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="service-header">
-                        <div class="icon-box">
-                            <i class="fa fa-leaf"></i>
+                    <div class="service-header abel-regular">
+                        <div class="image-box">
+                          <img src="images/zebraPlan.png" alt="Leoncillo" class="service-image">
                         </div>
-                        <h3>Plan Gratuito</h3>
-                    </div>
-                    <div class="service-body">
+                        <h3>Plan Zebra</h3>
+                      </div>
+                      
+                      <div class="service-body abel-regular">
                         <p>
-                            Comienza con características básicas para la gestión hotelera a pequeña escala.
-                            Perfecto para principiantes o pequeños hoteles.
+                          Comienza con características básicas para la gestión hotelera a pequeña escala.
+                          Perfecto para principiantes o pequeños hoteles.
                         </p>
                         <ul>
-                            <li>Gestión Básica de Reservas</li>
-                            <li>Soporte al Cliente Limitado</li>
-                            <li>Hasta 5 Cuentas de Usuario</li>
+                          <li>Gestión Básica de Reservas</li>
+                          <li>Soporte al Cliente Limitado</li>
+                          <li>Hasta 5 Cuentas de Usuario</li>
                         </ul>
+                        <br>
+                        <br>
+                        <br>
                         <a href="#" class="btn-download btn-learn-more flex items-center">Comienza Gratis</a>
-                    </div>
+                      </div>
                 </div>
                 <!-- Plan Gratuito Termina -->
             </div>
@@ -368,10 +394,10 @@
                 <!-- Plan King Comienza -->
                 <div class="service-single service-gold wow fadeInUp" data-wow-delay="0.4s">
                     <div class="service-header">
-						<div class="icon-box">
-							<i class="fa fa-crown"></i>
+                        <div class="image-box">
+                            <img src="images/leonplan.png" alt="León" class="service-image">
                         </div>
-                        <h3>Plan King</h3>
+                        <h3>Plan Leon</h3>
                     </div>
                     <div class="service-body">
                         <p>
@@ -415,41 +441,41 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="swiper-container screenshot-slider">
                     <div class="swiper-wrapper">
-                        <!-- Icon slide start -->
+                        <!-- Image slide start -->
                         <div class="swiper-slide">
                             <div class="screenshot-slide text-center">
-                                <i class="fa fa-hotel fa-4x" style="color:#4CAF50;"></i>
-                                <p>Se el mejor Hotel</p>
+                                <img src="images/7.png" alt="Descripción de la imagen 1" style="max-width: 100%; height: auto;">
+                                <p>Mejora la calidad de tus clientes</p>
                             </div>
                         </div>
-                        <!-- Icon slide end -->
-
-                        <!-- Icon slide start -->
+                        <!-- Image slide end -->
+                    
+                        <!-- Image slide start -->
                         <div class="swiper-slide">
                             <div class="screenshot-slide text-center">
-                                <i class="fa fa-chart-line fa-4x" style="color:#FF9800;"></i>
-                                <p>Mejora Tus Finanzas</p>
+                                <img src="images/8.png" alt="Descripción de la imagen 2" style="max-width: 100%; height: auto;">
+                                <p>Mejora la gestion de Tus Finanzas</p>
                             </div>
                         </div>
-                        <!-- Icon slide end -->
-
-                        <!-- Icon slide start -->
+                        <!-- Image slide end -->
+                    
+                        <!-- Image slide start -->
                         <div class="swiper-slide">
                             <div class="screenshot-slide text-center">
-                                <i class="fa fa-info-circle fa-4x" style="color:#2196F3;"></i>
-                                <p>Detalles del Hotel</p>
+                                <img src="images/6.png" alt="Descripción de la imagen 3" style="max-width: 100%; height: auto;">
+                                <p>Controla los detalles de tu Hotel</p>
                             </div>
                         </div>
-                        <!-- Icon slide end -->
-
-                        <!-- Icon slide start -->
+                        <!-- Image slide end -->
+                    
+                        <!-- Image slide start -->
                         <div class="swiper-slide">
                             <div class="screenshot-slide text-center">
-                                <i class="fa fa-user fa-4x" style="color:#9C27B0;"></i>
-                                <p>Vista del Dashboard</p>
+                                <img src="images/5.png" alt="Descripción de la imagen 4" style="max-width: 100%; height: auto;">
+                                <p>Gana en el mercado de competidores</p>
                             </div>
                         </div>
-                        <!-- Icon slide end -->
+                        <!-- Image slide end -->
                     </div>
                 </div>
 
@@ -473,7 +499,6 @@
             <div class="col-md-12">
                 <div class="section-title wow fadeInUp">
                     <h2>¿Tienes preguntas?</h2>
-                    <p>Hemos seleccionado las 3 preguntas más frecuentes</p>
                 </div>
             </div>
         </div>
@@ -483,7 +508,7 @@
                 <!-- Faq Single start -->
                 <div class="faq-single faq-pink wow fadeInUp" data-wow-delay="0.2s">
                     <div class="faq-title">
-                        <h3>¿Cómo puedo crear una cuenta en KingReserve?</h3>
+                        <h3>¿Cómo puedo crear <br> una cuenta en KingReserve?</h3>
                     </div>
 
                     <div class="faq-entry">
@@ -497,7 +522,7 @@
                 <!-- Faq Single start -->
                 <div class="faq-single faq-yellow wow fadeInUp" data-wow-delay="0.4s">
                     <div class="faq-title">
-                        <h3>¿Puedo cancelar o modificar mi reserva?</h3>
+                        <h3>¿Puedo cancelar o <br> modificar mi reserva?</h3>
                     </div>
 
                     <div class="faq-entry">
@@ -511,7 +536,7 @@
                 <!-- Faq Single start -->
                 <div class="faq-single faq-skyblue wow fadeInUp" data-wow-delay="0.6s">
                     <div class="faq-title">
-                        <h3>¿Qué métodos de pago se aceptan en KingReserve?</h3>
+                        <h3>¿Qué métodos de pago <br> se aceptan en KingReserve?</h3>
                     </div>
 
                     <div class="faq-entry">
@@ -590,11 +615,10 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title wow fadeInUp">
-                    <h2>Prueba KingReserve</h2>
+                    <h2><br><br>Prueba KingReserve</h2>
                     <p>Explora el último software de gestión hotelera - KingReserve</p>
-					<p>Puedes probar KingReserve en diferentes navegadores para una experiencia óptima.</p>
+                    <p>Puedes probar KingReserve en diferentes navegadores para una experiencia óptima.</p>
                 </div>
-				
             </div>
         </div>
         <div class="row">
@@ -619,56 +643,95 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title wow fadeInUp">
-                    <h2>Contacta al Desarrollador</h2>
+                    <h2><br> Contacta al Desarrollador</h2>
                     <p>¿Tienes una pregunta, una observación o una solicitud de colaboración? Envíanos un mensaje.</p>
                 </div>
             </div>
         </div>
 
-
-        
-            <div class="col-md-12">
-                <!-- Contact form start -->
-                <div class="contact-form">
-                    <form id="contactForm" action="" method="post" data-toggle="validator">
-                        <div class="row">
-                            <div class="form-group col-md-6 col-sm-12">
-                                <input type="text" name="first_name" id="first_name" class="form-control"
-                                    placeholder="Nombres" required>
-                                <div class="help-block with-errors"></div>
-                            </div>
-
-                            <div class="form-group col-md-6 col-sm-12">
-                                <input type="text" name="last_name" id="last_name" class="form-control"
-                                    placeholder="Apellidos" required>
-                                <div class="help-block with-errors"></div>
-                            </div>
-
-                            <div class="form-group col-md-12 col-sm-12">
-                                <input type="email" name="email" id="email" class="form-control"
-                                    placeholder="Correo Electrónico" autocomplete="email" required>
-                                <div class="help-block with-errors"></div>
-                            </div>
-
-                            <div class="form-group col-md-12 col-sm-12">
-                                <textarea rows="6" name="message" id="message" class="form-control"
-                                    placeholder="¿Cómo podemos ayudarte?" required></textarea>
-                                <div class="help-block with-errors"></div>
-                            </div>
-
-                            <div class="col-md-12 col-sm-12 text-center">
-                                <button type="submit" class="btn-custom" title="Enviar tu mensaje!">Enviar
-                                    Mensaje</button>
-                                <div id="msgSubmit" class="h3 text-left hidden"></div>
-                            </div>
+        <div class="col-md-12">
+            <!-- Contact form start -->
+            <div class="contact-form">
+                <form id="contactForm" action="" method="post" data-toggle="validator">
+                    <div class="row">
+                        <div class="form-group col-md-6 col-sm-12">
+                            <input type="text" name="first_name" id="first_name" class="form-control"
+                                placeholder="Nombres" required>
+                            <div class="help-block with-errors"></div>
                         </div>
-                    </form>
-                </div>
-                <!-- Contact Form end -->
+
+                        <div class="form-group col-md-6 col-sm-12">
+                            <input type="text" name="last_name" id="last_name" class="form-control"
+                                placeholder="Apellidos" required>
+                            <div class="help-block with-errors"></div>
+                        </div>
+
+                        <div class="form-group col-md-12 col-sm-12">
+                            <input type="email" name="email" id="email" class="form-control"
+                                placeholder="Correo Electrónico" autocomplete="email" required>
+                            <div class="help-block with-errors"></div>
+                        </div>
+
+                        <div class="form-group col-md-12 col-sm-12">
+                            <textarea rows="6" name="message" id="message" class="form-control"
+                                placeholder="¿Cómo podemos ayudarte?" required></textarea>
+                            <div class="help-block with-errors"></div>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 text-center">
+                            <button type="submit" class="btn-custom" title="Enviar tu mensaje!">Enviar
+                                Mensaje</button>
+                            <div id="msgSubmit" class="h3 text-left hidden"></div>
+                        </div>
+                    </div>
+                </form>
             </div>
+            <!-- Contact Form end -->
+        </div>
     </div>
+
+    
+    <script>
+
+        const contactForm = document.querySelector('form');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Ajusta los IDs de los campos aquí
+            const nombre = document.getElementById('first_name').value;
+            const apellido = document.getElementById('last_name').value;
+            const email = document.getElementById('email').value;
+            const mensaje = document.getElementById('message').value;
+
+            db.collection('contactos').add({
+                nombre: nombre,
+                apellido: apellido,
+                email: email,
+                mensaje: mensaje,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp()
+            }).then(() => {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Mensaje enviado',
+                    text: 'Tu mensaje ha sido enviado con éxito.',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                contactForm.reset();
+            }).catch((error) => {
+                console.error('Error al enviar el mensaje: ', error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Error',
+                    text: 'Hubo un error al enviar el mensaje.',
+                });
+            });
+        });
+    </script>
 </section>
 <!-- Sección de Contáctenos Termina -->
+
 
 	<!-- Footer section starts -->
 	<footer class="footer">

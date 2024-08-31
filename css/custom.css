@@ -10,19 +10,15 @@
 02. CSS del área de Navegación
 03. CSS del área del Slider
 04. CSS del área de Servicios
-05. CSS del área de Video Introductorio
 06. CSS del área de Resumen
 07. CSS del área de Cómo Funciona
 08. CSS del área de Características Asombrosas
 09. CSS del área de Precios
-10. CSS del área de Capturas de Pantalla
-11. CSS del área de Testimonios
 12. CSS del área de Preguntas Frecuentes
 13. CSS del área de Seguimiento en Redes Sociales
 14. CSS del área de Descarga de Aplicaciones
 15. CSS del área de Contáctanos
 16. CSS del área del Pie de Página
-17. Pantallas de Medios
 -------------------------------------------------------------------------------------- */
 
 
@@ -49,6 +45,10 @@ h5,
 h6{
 	margin-top:0;
 	font-weight: 700;
+}
+
+p{
+	text-align: justify;
 }
 
 img{
@@ -232,17 +232,18 @@ a:focus{
 	margin-bottom: 0;
 }
 
-.navbar-brand{
-	padding: 16px 15px 0;
-	height: auto;
-	transition: all 0.3s ease-out;
-	-webkit-transition: all 0.3s ease-out;
-	-moz-transition: all 0.3s ease-out;
+.navbar-brand {
+    padding: 16px 15px 10;
+    height: auto;
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -moz-transition: all 0.3s ease-out;
 }
 
-.navbar-brand img{
-	transition: all 0.3s;
-	height: 60px;
+.navbar-brand img {
+    transition: all 0.3s;
+    height: 70px; 
+    width: auto; 
 }
 
 .navbar-default{
@@ -382,6 +383,47 @@ a:focus{
 }
 
 /************************************/
+/***** 02.1. Hero area css  *****/
+/************************************/
+
+#hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 99.95vh;
+    color: #ffff;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+	),url("../images/heroprincipal.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+
+.cinzel-regular {
+	font-family: "Cinzel", serif;
+	font-optical-sizing: auto;
+	font-weight:900;
+	font-style: normal;
+}
+
+#hero h1{
+    color: #ffff;
+    font-family: "Cinzel";
+	font-size: 100px; 	
+}
+
+#hero button{
+    font-size: 1.75em;
+}
+
+
+/************************************/
 /*****   03. Slider area css    *****/
 /************************************/
 
@@ -486,74 +528,84 @@ a:focus{
 	background: -o-linear-gradient(#f39301,#fed30a);
 }
 
+
 /**************************************/
 /*****   04. Services area css    *****/
 /**************************************/
 
-.services{
-	padding: 60px 0;
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
+
+.abel-regular {
+  font-family: "Abel", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.services {
+  padding: 60px 0;
 }
 
 .service-single {
-    padding: 20px;
-    border-radius: 6px;
-    background: #5b1f00;
-    background: linear-gradient(to top, #ffd398, #db9f4f);
-    background: -webkit-linear-gradient(to top, #5b1f00, #db9f4f);
-    background: -moz-linear-gradient(to top, #5b1f00, #db9f4f);
-    background: -o-linear-gradient(to top, #5b1f00, #db9f4f);
+  padding: 20px;
+  border-radius: 6px;
+  background-color: #ffd398; /* Color de fondo actualizado */
+  margin-bottom: 20px;
+  height: 450px; /* Ajusta la altura según sea necesario */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Distribuye el espacio de manera uniforme */
 }
 
-.service-skyblue {
-    background: #ffde59;
-    background: linear-gradient(to top, #ffd398, #db9f4f);
-    background: -webkit-linear-gradient(to top, #5b1f00, #db9f4f);
-    background: -moz-linear-gradient(to top, #5b1f00, #db9f4f);
-    background: -o-linear-gradient(to top, #5b1f00, #db9f4f);
+.service-header {
+  position: relative;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
-.service-pink {
-    background: #ffde59;
-    background: linear-gradient(to top, #ffd398, #db9f4f);
-    background: -webkit-linear-gradient(to top, #5b1f00, #db9f4f);
-    background: -moz-linear-gradient(to top, #5b1f00, #db9f4f);
-    background: -o-linear-gradient(to top, #5b1f00, #db9f4f);
+.service-header .image-box {
+  margin: 0 auto;
+  width: 60px; /* Tamaño de las imágenes */
+  height: 60px;
+  overflow: hidden;
 }
 
-.service-blue {
-    background: #ffde59;
-    background: linear-gradient(to top, #ffd398, #db9f4f);
-    background: -webkit-linear-gradient(to top, #5b1f00, #db9f4f);
-    background: -moz-linear-gradient(to top, #5b1f00, #db9f4f);
-    background: -o-linear-gradient(to top, #5b1f00, #db9f4f);
+.service-header .service-image {
+  width: 100%;
+  height: auto;
 }
 
-.service-header{
-	position: relative;
-	margin-bottom: 30px;
+.service-header h3 {
+  color: #5b1f00; /* Cambiado para coincidir con el esquema de colores */
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5em;
+  margin-top: 10px;
+  font-family: "Abel", sans-serif;
 }
 
-.service-header .icon-box{
-	font-size: 50px;
-	color: #fff;
-	position: absolute;
-	right: 0;
-	top: 0;
-	line-height: 1em;
+.service-body {
+  color: #5b1f00; /* Cambiado para coincidir con el esquema de colores */
+  font-size: 14px;
+  font-family: "Abel", sans-serif;
+  margin-bottom: 0;
+  flex-grow: 1;
 }
 
-.service-header h3{
-	color: #fff;
-	padding-right: 60px;
-	font-size: 18px;
-	font-weight: 500;
-	line-height: 1.5em;
+.service-body ul {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding-left: 20px;
 }
 
-.service-body p{
-	color: #fff;
-	font-size: 14px;
-	margin-bottom: 0;
+.btn-download {
+  background-color: #5b1f00; /* Color del botón */
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: "Abel", sans-serif;
+  text-align: center;
+  margin-top: auto; /* Empuja el botón hacia la parte inferior */
 }
 
 /*****************************************/
@@ -939,6 +991,14 @@ a:focus{
 	text-align: center;
 }
 
+.screenshots .screenshot-slide p {
+    text-align: center;
+}
+
+.screenshots .section-title p	{
+	text-align: center;
+}
+
 .screenshot-slide p{
 	font-size: 14px;
 	color: #a5a3a3;
@@ -1033,111 +1093,95 @@ a:focus{
 /*****   12. FAQs area css    *****/
 /**********************************/
 
-.faqs{
-	padding: 100px 0;
+.faqs {
+    padding: 100px 0;
 }
 
-.faq-single{
-	background: #f9f9f9;
-	padding: 30px;
-	border: 1px solid #cdcdcf;
-	border-radius: 4px;
-	margin-bottom: 30px;
-	transition: all 0.3s ease-in-out;
-	position: relative;
+.faq-single {
+    background: #f9f9f9;
+    padding: 30px;
+    border: 1px solid #cdcdcf;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    height: 300px; /* Aumenta este valor según el tamaño deseado */
+    overflow: hidden; /* Evita que el contenido se desborde */
 }
 
-.faq-single:before{
-	content: '';
-	display: block;
-	position: absolute;
-	left: -1px;
-	top: 0px;
-	right: -1px;
-	height: 8px;
-	z-index: -1;
-	border-radius: 4px 4px 0 0;
-	transition: all 0.3s ease-in-out;
+.faq-single:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: -1px;
+    top: 0px;
+    right: -1px;
+    height: 8px;
+    z-index: -1;
+    border-radius: 4px 4px 0 0;
+    transition: all 0.3s ease-in-out;
 }
 
-.faq-single:hover{
-	background: #fff;
-	box-shadow: 0px -6px 70px 0px rgba(0, 0, 0, 0.13);
+.faq-single:hover {
+    background: #fff;
+    box-shadow: 0px -6px 70px 0px rgba(0, 0, 0, 0.13);
 }
 
-.faq-single:hover:before{
-	top: -6px;
+.faq-single:hover:before {
+    top: -6px;
 }
 
-.faq-title{
-	margin-bottom: 20px;
+.faq-title {
+    margin-bottom: 20px;
 }
 
-.faq-title h3{
-	font-size: 16px;
-	color: #1a1a1a;
-	font-weight: 600;
-	position: relative;
+.faq-title h3 {
+    font-size: 16px;
+    color: #1a1a1a;
+    font-weight: 600;
+    position: relative;
 }
 
-.faq-title h3:after{
-	content: '?';
-	display: block;
-	font-weight: 600;
-	font-size: 14px;
-	width: 20px;
-	height: 20px;
-	position: absolute;
-	top: 0;
-	right: 0;
-	text-align: center;
-	line-height: 20px;
-	color: #fff;
-	border-radius: 50%;
+.faq-title h3:after {
+    content: '?';
+    display: block;
+    font-weight: 600;
+    font-size: 14px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    line-height: 20px;
+    color: #fff;
+    border-radius: 50%;
 }
 
 .faq-pink .faq-title h3:after,
-.faq-pink.faq-single:before{
-	background: #ee3e86;
-    background: linear-gradient(to top, #ee3e86,#fa5b77);
-    background: -webkit-linear-gradient(to top, #ee3e86,#fa5b77);
-    background: -moz-linear-gradient(to top, #ee3e86,#fa5b77);
-    background: -o-linear-gradient(to top, #ee3e86,#fa5b77);
-}
-
+.faq-pink.faq-single:before,
 .faq-yellow .faq-title h3:after,
-.faq-yellow.faq-single:before{
-	background: #f39301;
-    background: linear-gradient(#f39301,#fed30a);
-    background: -webkit-linear-gradient(#f39301,#fed30a);
-    background: -moz-linear-gradient(#f39301,#fed30a);
-    background: -o-linear-gradient(#f39301,#fed30a);
-}
-
+.faq-yellow.faq-single:before,
 .faq-skyblue .faq-title h3:after,
-.faq-skyblue.faq-single:before{
-	background: #05d2e3;
-    background: linear-gradient(to top, #05d2e3,#02da8f);
-    background: -webkit-linear-gradient(to top, #05d2e3,#02da8f);
-    background: -moz-linear-gradient(to top, #05d2e3,#02da8f);
-    background: -o-linear-gradient(to top, #05d2e3,#02da8f);
-}
-
+.faq-skyblue.faq-single:before,
 .faq-blue .faq-title h3:after,
-.faq-blue.faq-single:before{
-	background: #569eff;
-    background: linear-gradient(to top, #569eff,#22e8f3);
-    background: -webkit-linear-gradient(to top, #569eff,#22e8f3);
-    background: -moz-linear-gradient(to top, #569eff,#22e8f3);
-    background: -o-linear-gradient(to top, #569eff,#22e8f3);
+.faq-blue.faq-single:before {
+    background: #5b1f00;
+    background: linear-gradient(to top, #5b1f00, #5b1f00);
+    background: -webkit-linear-gradient(to top, #5b1f00, #5b1f00);
+    background: -moz-linear-gradient(to top, #5b1f00, #5b1f00);
+    background: -o-linear-gradient(to top, #5b1f00, #5b1f00);
 }
 
-.faq-entry p{
-	font-size: 14px;
-	color: #a5a3a3;
-	font-weight: 300;
-	line-height: 1.5em;
-	margin: 0;
+.faq-entry p {
+    font-size: 14px;
+    color: #a5a3a3;
+    font-weight: 300;
+    line-height: 1.5em;
+    margin: 0;
+    overflow: hidden; /* Evita que el contenido se desborde */
+    text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es demasiado largo */
+    white-space: normal; /* Permite que el texto se divida en varias líneas */
 }
 
 /*************************************************/
@@ -1218,21 +1262,34 @@ a:focus{
 /*******************************************/
 
 .download-app-button {
-	text-align: center;
+    text-align: center;
 }
 
 .browser-icons {
-	margin-top: 10px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    border: 1px solid #cdcdcf;
+    border-radius: 8px;
+    background-color: #f9f9f9;
 }
 
 .browser-icons i {
-	font-size: 24px;
-	margin: 0 10px;
-	color: #333;
+    font-size: 48px; /* Aumenta el tamaño de los iconos */
+    margin: 0 10px;
+    color: #5b1f00;
+    transition: transform 0.3s ease, color 0.3s ease; /* Añade transición para la animación */
 }
 
 .browser-icons i:hover {
-	color: #007bff;
+    color: #ffd398;
+    transform: scale(1.2); /* Añade animación de escala */
+}
+
+.download-app .section-title p {
+    text-align: center; /* Centra el texto en la sección */
 }
 
 /****************************************/
@@ -1241,6 +1298,11 @@ a:focus{
 
 .contact-us{
 	padding: 40px 0 100px;
+}
+
+.contact-us .section-title p{
+	text-align: Center;
+	margin-bottom: 40px;
 }
 
 .contact-form{
