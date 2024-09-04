@@ -24,6 +24,9 @@
 	<!-- Swiper's CSS -->
 	<link rel="stylesheet" href="css/swiper.min.css">
 	<!-- Slick nav css -->
+     <!-- Otros enlaces y meta tags -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!-- Incluye los scripts de Firebase y SweetAlert -->
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
@@ -126,14 +129,14 @@
 					<div class="header-content wow fadeInUp">
 							<h4 class="main-color">Somos</h4>  
 							<h2>KingGroup</h2>  
-							<p>El equipo de desarrollo quien se encarga de poder gestionar las nuevas versiones demuestro nuevo prodcuto.
+							<p>El equipo de desarrollo quien se encarga de poder gestionar las nuevas versiones demuestro nuevo producto.
                                 Descubre KingReserve, nuestra plataforma principal permite 
 								a los hoteles gestionar sus operaciones con una eficiencia sin precedentes,
 								 mejorando la experiencia de cada huésped. KingReserve no es solo una herramienta 
 								 para administrar reservas y personal; es una solución integral que ofrece servicios 
 								 de manera accesible e intuitiva, elevando el estándar de la hospitalidad moderna.</p>	
 								 <div class="download-button">  
-									<a href="register.html" class="btn-download btn-register flex items-center">  				
+									<a href="#contact" class="btn-download btn-register flex items-center">  				
 										Registrar  
 									</a>  
 									<a href="#hotitworks" class="btn-download btn-learn-more flex items-center">  										 
@@ -242,7 +245,7 @@
                     </div>
                     <h3>Crea <br>una cuenta gratuita</h3>
                     <p>Regístrate rápida y fácilmente para comenzar a gestionar tus reservas de hotel. ¡Solo unos pocos clics y estarás listo!</p>
-                    <a href="">Saber Más</a> 
+                    <a href="#contact">Saber Más</a> 
                 </div>
                 <!-- Cómo Funciona Individual Termina -->
             </div>
@@ -256,7 +259,7 @@
 
                     <h3>Gestión de <br> Personal</h3>
                     <p>Optimiza la administración del personal de tu hotel, asignando tareas, gestionando horarios y mejorando la eficiencia operativa.</p>
-                    <a href="">Saber Más</a>
+                    <a href="#oportunidad">Saber Más</a>
                 </div>
                 <!-- Cómo Funciona Individual Termina -->
             </div>
@@ -270,7 +273,7 @@
 
                     <h3>Administración de Reservas y Estadísticas Personalizadas</h3>
                     <p>Administra todas tus reservas de manera centralizada y accede a estadísticas personalizadas para  la toma de decisiones.</p>
-                    <a href="">Saber Más</a>
+                    <a href="#contactogeneral">Saber Más</a>
                 </div>
                 <!-- Cómo Funciona Individual Termina -->
             </div>
@@ -384,7 +387,7 @@
                         <br>
                         <br>
                         <br>
-                        <a href="#" class="btn-download btn-learn-more flex items-center">Comienza Gratis</a>
+                        <a href="#" class="btn-download btn-learn-more flex items-center" onclick="notify('Plan Zebra')">Comienza Gratis</a>
                       </div>
                 </div>
                 <!-- Plan Gratuito Termina -->
@@ -411,7 +414,7 @@
                             <li>Cuentas de Usuario Ilimitadas</li>
                             <li>Acceso a Todas las Integraciones de Terceros</li>
                         </ul>
-                        <a href="#" class="btn-download btn-learn-more flex items-center">Suscríbete Ahora por $32.90/mes</a>
+                        <a href="#" class="btn-download btn-learn-more flex items-center" onclick="notify('Plan Leon')">Suscríbete Ahora por S/32.90/mes</a>
                     </div>
                 </div>
                 <!-- Plan King Termina -->
@@ -421,12 +424,23 @@
 </div>
 <!-- Sección de Suscripción Termina -->
 
+<script>
+    function notify(plan) {
+        Swal.fire({
+            title: '¡Gracias por tu interés!',
+            text: `Escríbenos para saber que estás interesado en nuestra futura app y el plan que quieres adquirir: ${plan}`,
+            icon: 'info',
+            confirmButtonText: 'OK'
+        });
+    }
+    </script>
+
 
 	
 
 
 	<!-- Screenshot section starts -->
-<section class="screenshots">
+<section class="screenshots" id="oportunidad">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -552,7 +566,7 @@
 
 
 	<!-- Follow on social section starts -->
-	<section class="follow-on-social">
+	<section class="follow-on-social"  id="contactogeneral">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
@@ -571,7 +585,7 @@
 					<!-- Social single start -->
 					<div class="follow-social-single fs-facebook wow fadeInUp" data-wow-delay="0.2s">
 						<h3>Follow on GitHub</h3>
-						<a href=""><i class="fa fa-github"></i> GitHub</a>
+						<a href="https://github.com/KingGroupOficial"><i class="fa fa-github"></i> GitHub</a>
 					</div>
 					<!-- Social single end -->
 				</div>
@@ -580,7 +594,7 @@
 					<!-- Social single start -->
 					<div class="follow-social-single fs-youtube wow fadeInUp" data-wow-delay="0.4s">
 						<h3>Subscribe on Youtube</h3>
-						<a href=""><i class="fa fa-youtube"></i>
+						<a href="https://www.youtube.com/channel/UCt2m9qj07rd_AlIlDl-thMg"><i class="fa fa-youtube"></i>
 							Youtube</a>
 					</div>
 					<!-- Social single end -->
@@ -590,7 +604,7 @@
 					<!-- Social single start -->
 					<div class="follow-social-single fs-twitter wow fadeInUp" data-wow-delay="0.6s">
 						<h3>Connect on LinkedIn</h3>
-						<a href=""><i class="fa fa-linkedin"></i>
+						<a href="linkedin.com/in/maykol-jhordan-rojas-velasquez-7594a52a2"><i class="fa fa-linkedin"></i>
 							LinkedIn</a>
 					</div>
 					<!-- Social single end -->
@@ -600,7 +614,7 @@
 					<!-- Social single start -->
 					<div class="follow-social-single fs-whatsapp wow fadeInUp" data-wow-delay="0.8s">
 						<h3>Chat on Whatsapp</h3>
-						<a href=""><i class="fa fa-whatsapp"></i> WhatsApp</a>
+						<a href="https://chat.whatsapp.com/Kz2yOwMhhEs14AUynUbXkj"><i class="fa fa-whatsapp"></i> WhatsApp</a>
 					</div>
 					<!-- Social single end -->
 				</div>
@@ -625,10 +639,10 @@
             <div class="col-md-12">
                 <div class="download-app-button">
                     <div class="browser-icons">
-                        <i class="fa fa-chrome"></i>
-                        <i class="fa fa-firefox"></i>
-                        <i class="fa fa-edge"></i>
-                        <i class="fa fa-safari"></i>
+                        <i class="fa fa-chrome" onclick="showMessage()"></i>
+                        <i class="fa fa-firefox" onclick="showMessage()"></i>
+                        <i class="fa fa-edge" onclick="showMessage()"></i>
+                        <i class="fa fa-safari" onclick="showMessage()"></i>
                     </div>
                 </div>
             </div>
@@ -636,6 +650,18 @@
     </div>
 </section>
 <!-- Sección de Descarga de la App Termina -->
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+function showMessage() {
+    Swal.fire({
+        title: 'Construyendo',
+        text: 'Una aplicación digna de un rey. Aplicación en desarrollo.',
+        icon: 'info',
+        confirmButtonText: 'OK'
+    });
+}
+</script>
 
 <!-- Sección de Contáctenos Comienza -->
 <section class="contact-us" id="contact">
