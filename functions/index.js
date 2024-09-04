@@ -4,8 +4,8 @@ const nodemailer = require('nodemailer');
 
 admin.initializeApp();
 
-const gmailEmail = functions.config().gmail.email;
-const gmailPassword = functions.config().gmail.password;
+const gmailEmail = 'maycoljhordan07@gmail.com';
+const gmailPassword = 'lkjnthxcjquxuptv';
 
 const transporter = nodemailer.createTransport({
   service: 'gmail',
@@ -22,11 +22,24 @@ exports.sendEmailNotification = functions.firestore
 
     const mailOptions = {
       from: gmailEmail,
-      to: 'maycoljhordan07@gmail.com',
-      subject: `Nuevo mensaje de ${newValue.nombre} ${newValue.apellido}`,
-      text: `Has recibido un nuevo mensaje de ${newValue.nombre} ${
-        newValue.apellido
-      } (${newValue.email}):\n\n${newValue.mensaje}`,
+      to: [
+        'maycoljhordan07@gmail.com',
+        'sergioandregomezvallejos@gmail.com'
+      ],
+      subject: 'Has recibido un mensaje de la página de King Reserve',
+      text: `Hola,
+
+Has recibido un nuevo mensaje de ${newValue.nombre} ${newValue.apellido} 
+(${newValue.email}):
+
+"${newValue.mensaje}"
+
+Por favor, responde al remitente si es necesario.
+
+---
+Este mensaje fue enviado desde la página de King Reserve.
+© 2024 King Reserve. Todos los derechos reservados.
+`,
     };
 
     return transporter.sendMail(mailOptions)
