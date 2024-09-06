@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 	<!-- Meta -->
@@ -31,6 +31,10 @@
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Otros enlaces y meta tags -->
+    <script src="https://unpkg.com/i18next@21.6.14/dist/umd/i18next.min.js"></script>
+    <script src="https://unpkg.com/i18next-browser-languagedetector@6.1.2/dist/umd/i18nextBrowserLanguageDetector.min.js"></script>
+    <script src="https://unpkg.com/jquery-i18next@1.2.1/dist/umd/jquery-i18next.min.js"></script>
     <script>
         // Your web app's Firebase configuration
         const firebaseConfig = {
@@ -81,7 +85,7 @@
         <div class="container">
             <div class="navbar-header">
                 <!-- Logo comienza -->
-                <a class="navbar-brand" href="index-2.html">
+                <a class="navbar-brand" >
 					<img src="images/logoletras.png"   alt="Logo" />
 				</a>
                 <!-- Logo Termina -->
@@ -95,22 +99,30 @@
             <!-- Navegación comienza -->
             <div class="navbar-collapse collapse" id="navigation">
                 <ul class="nav navbar-nav navbar-right main-navigation" id="main-menu">
-                    <li class="active"><a href="#hero">Inicio</a></li>
-                    <li><a href="#overview">Resumen</a></li>
-                    <li><a href="#hotitworks">Cómo funciona</a></li>
-                    <li><a href="#features">Características</a></li>
-                    <li><a href="#tech-stack">Precios</a></li>
-                    <li><a href="#faq">Preguntas Frecuentes</a></li>
-                    <li><a href="#contact">Contáctanos</a></li>
+                    <li class="active"><a href="#hero" data-i18n="nav.home">Inicio</a></li>
+                    <li><a href="#overview" data-i18n="nav.overview">Resumen</a></li>
+                    <li><a href="#hotitworks" data-i18n="nav.howitworks">Cómo funciona</a></li>
+                    <li><a href="#features" data-i18n="nav.features">Características</a></li>
+                    <li><a href="#tech-stack" data-i18n="nav.pricing">Precios</a></li>
+                    <li><a href="#faq" data-i18n="nav.faq">Preguntas Frecuentes</a></li>
+                    <li><a href="#contact" data-i18n="nav.contact">Contáctanos</a></li>
+                    <li class="language-switcher">
+                        <i class="fas fa-globe"></i>
+                        <select id="languageSwitcher">
+                            <option value="en"selected>English</option>
+                            <option value="es" >Español</option> <!-- Español seleccionado por defecto -->
+                        </select>
+                    </li>
                 </ul>
             </div>
             <!-- Navegación Termina -->
+
         </div>
     </nav>
 </header>
 <!-- Sección de Encabezado Termina-->
-<section id="hero">
-    <h1>REVOLUCION <br>HOTELERA</h1>
+<section id="hero" >
+    <h1 data-i18n="hero.title"> REVOLUCION <br>HOTELERA</h1>
 </section>
 	<!-- Banner Section Starts -->
 	<section class="banner" id="home">
@@ -127,19 +139,19 @@
 				<div class="col-md-6 col-sm-6">
 					<!-- Header Content start -->
 					<div class="header-content wow fadeInUp">
-							<h4 class="main-color">Somos</h4>  
-							<h2>KingGroup</h2>  
-							<p>El equipo de desarrollo quien se encarga de poder gestionar las nuevas versiones demuestro nuevo producto.
+							<h4 class="main-color" data-i18n="header.weare">Somos</h4>  
+							<h2 data-i18n="header.kinggroup">KingGroup</h2>  
+							<p data-i18n="header.description">El equipo de desarrollo quien se encarga de poder gestionar las nuevas versiones demuestro nuevo producto.
                                 Descubre KingReserve, nuestra plataforma principal permite 
 								a los hoteles gestionar sus operaciones con una eficiencia sin precedentes,
 								 mejorando la experiencia de cada huésped. KingReserve no es solo una herramienta 
 								 para administrar reservas y personal; es una solución integral que ofrece servicios 
 								 de manera accesible e intuitiva, elevando el estándar de la hospitalidad moderna.</p>	
 								 <div class="download-button">  
-									<a href="#contact" class="btn-download btn-register flex items-center">  				
+									<a href="#contact" class="btn-download btn-register flex items-center" data-i18n="header.register">  				
 										Registrar  
 									</a>  
-									<a href="#hotitworks" class="btn-download btn-learn-more flex items-center">  										 
+									<a href="#hotitworks" class="btn-download btn-learn-more flex items-center" data-i18n="header.learnmore">  										 
 										Saber Más  
 									</a>  
 								</div>  
@@ -159,10 +171,10 @@
 					<!-- Intro gallery content start -->
 					<div class="video-entry wow fadeInUp">
 						<div class="section-title">
-							<h2>Resumen de King Reserve</h2> 
+							<h2 data-i18n="overview.title">Resumen de King Reserve</h2> 
 						</div>
 
-						<p>KingReserve es una startup innovadora que ofrece una plataforma diseñada para 
+						<p  data-i18n="overview.description">KingReserve es una startup innovadora que ofrece una plataforma diseñada para 
 							que los hoteles gestionen sus operaciones de manera eficiente y mejoren la 
 							experiencia de sus huéspedes. La herramienta permite administrar reservas, personal y servicios
 							 de forma accesible e intuitiva, estableciendo alianzas estratégicas 
@@ -205,16 +217,16 @@
 					<div class="overview-entry wow fadeInUp">
 						<div class="section-title">
 							<div class="section-title">  
-								<h2>Visión</h2>  
+								<h2 data-i18n="vision.title">Visión</h2>  
 							</div>  
-							<p>  
+							<p data-i18n="vision.description">  
 								Visualizamos un mundo donde la tecnología y la gestión hotelera se fusionan para crear experiencias excepcionales tanto para los empleados como para los huéspedes. Nuestro objetivo es que KingReserve sea sinónimo de innovación en el sector hotelero, un lugar donde las empresas puedan optimizar sus operaciones y elevar la calidad de sus servicios. Aspiramos a construir una industria hotelera más conectada, eficiente y orientada al cliente.  
 							</p>  
 							
 							<div class="section-title">  
-								<h2>Misión</h2>  
+								<h2 data-i18n="mission.title">Misión</h2>  
 							</div>  
-							<p>  
+							<p data-i18n="mission.description">  
 								Nos esforzamos por proporcionar una plataforma que conecte a los hoteles con herramientas avanzadas de gestión, mejorando la eficiencia operativa y la satisfacción del cliente. Estamos decididos a utilizar la tecnología para generar un impacto positivo en la experiencia de los huéspedes y la eficiencia del personal hotelero. KingReserve será símbolo de excelencia en la gestión hotelera, innovación en la administración de servicios, y compromiso con la mejora continua, mientras fomentamos una comunidad activa y colaborativa en torno a la hospitalidad y el servicio.  
 							</p>
 					</div>
@@ -231,7 +243,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title wow fadeInUp">
-                    <h2>Cómo Funciona</h2>
+                    <h2 data-i18n="howitworks.title">Cómo Funciona</h2>
                 </div>
             </div>
         </div>
@@ -243,9 +255,9 @@
                     <div class="icon-box">
                         <i class="flaticon-login"></i>
                     </div>
-                    <h3>Crea <br>una cuenta gratuita</h3>
-                    <p>Regístrate rápida y fácilmente para comenzar a gestionar tus reservas de hotel. ¡Solo unos pocos clics y estarás listo!</p>
-                    <a href="#contact">Saber Más</a> 
+                    <h3 data-i18n="howitworks.createaccount">Crea <br>una cuenta gratuita</h3>
+                    <p data-i18n="howitworks.createaccountdesc">Regístrate rápida y fácilmente para comenzar a gestionar tus reservas de hotel. ¡Solo unos pocos clics y estarás listo!</p>
+                    <a href="#contact" data-i18n="howitworks.learnmore">Saber Más</a> 
                 </div>
                 <!-- Cómo Funciona Individual Termina -->
             </div>
@@ -257,9 +269,9 @@
 						<i class="flaticon-eye-tracking"></i>
                     </div>
 
-                    <h3>Gestión de <br> Personal</h3>
-                    <p>Optimiza la administración del personal de tu hotel, asignando tareas, gestionando horarios y mejorando la eficiencia operativa.</p>
-                    <a href="#oportunidad">Saber Más</a>
+                    <h3 data-i18n="howitworks.staffmanagement">Gestión de <br> Personal</h3>
+                    <p data-i18n="howitworks.staffmanagementdesc">Optimiza la administración del personal de tu hotel, asignando tareas, gestionando horarios y mejorando la eficiencia operativa.</p>
+                    <a href="#oportunidad" data-i18n="howitworks.learnmore">Saber Más</a>
                 </div>
                 <!-- Cómo Funciona Individual Termina -->
             </div>
@@ -271,9 +283,9 @@
                         <i class="flaticon-connection"></i>
                     </div>
 
-                    <h3>Administración de Reservas y Estadísticas Personalizadas</h3>
-                    <p>Administra todas tus reservas de manera centralizada y accede a estadísticas personalizadas para  la toma de decisiones.</p>
-                    <a href="#contactogeneral">Saber Más</a>
+                    <h3 data-i18n="howitworks.reservations">Administración de Reservas y Estadísticas Personalizadas</h3>
+                    <p data-i18n="howitworks.reservationsdesc">Administra todas tus reservas de manera centralizada y accede a estadísticas personalizadas para  la toma de decisiones.</p>
+                    <a href="#contactogeneral" data-i18n="howitworks.learnmore">Saber Más</a>
                 </div>
                 <!-- Cómo Funciona Individual Termina -->
             </div>
@@ -283,78 +295,75 @@
 <!-- Sección Cómo Funciona Termina --> 
 
 
-	<!-- Awesome features section starts -->
-	<section class="awesome-features" id="features">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="section-title wow fadeInUp">
-						<h2>Características Clave</h2>
-                    <p>Descubre cómo KingReserve, nuestra innovadora plataforma, optimiza la gestión hotelera para una operación eficiente y una experiencia superior para los huéspedes.
-                         KingReserve es tu solución integral para administrar reservas, personal y servicios con facilidad.
+<!-- Awesome features section starts -->
+<section class="awesome-features" id="features">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title wow fadeInUp">
+                    <h2 data-i18n="features.title">Características Clave</h2>
+                    <p data-i18n="features.description">
+                        Descubre cómo KingReserve, nuestra innovadora plataforma, optimiza la gestión hotelera para una operación eficiente y una experiencia superior para los huéspedes.
+                        KingReserve es tu solución integral para administrar reservas, personal y servicios con facilidad.
                     </p>
-					</div>
-				</div>
-			</div>
+                </div>
+            </div>
+        </div>
 
-			<div class="row">
-				<div class="col-md-6">
-					<div class="row" style="margin-bottom:20px">
-						<!-- Feature single start -->
-						<div class="col-md-6 col-sm-6">
-							<div class="feature-single feature-pink wow fadeInUp" data-wow-delay="0.2s">
-								<h4>01</h4>
-                            	<h3>Gestión Integral de Reservas</h3>
-                            	<p>Administra todas tus reservas de manera centralizada con actualizaciones en tiempo real y confirmaciones instantáneas, mejorando la eficiencia operativa.</p>
-							</div>
-						</div>
-						<!-- Feature single start -->
+        <!-- Primera fila con 2 características -->
+        <div class="row">
+            <!-- Característica 1 -->
+            <div class="col-md-6">
+                <div class="feature-single feature-pink wow fadeInUp" data-wow-delay="0.2s">
+                    <h4>01</h4>
+                    <h3 data-i18n="features.feature1">Gestión Integral de Reservas</h3>
+                    <p data-i18n="features.feature1desc">Administra todas tus reservas de manera centralizada con actualizaciones en tiempo real y confirmaciones instantáneas, mejorando la eficiencia operativa.</p>
+                </div>
+            </div>
 
-						<!-- Feature single start -->
-						<div class="col-md-6 col-sm-6">
-							<div class="feature-single feature-yellow wow fadeInUp" data-wow-delay="0.4s">
-								<h4>02</h4>
-                            	<h3>Optimización del Personal</h3>
-								<p>Asigna tareas, gestiona horarios y mejora la eficiencia del personal a través de herramientas intuitivas y análisis personalizado.Ademas de poder gestionar mejor al personal. </p>
-							</div>
-						</div>
-						<!-- Feature single end -->
+            <!-- Característica 2 -->
+            <div class="col-md-6">
+                <div class="feature-single feature-yellow wow fadeInUp" data-wow-delay="0.4s">
+                    <h4>02</h4>
+                    <h3 data-i18n="features.feature2">Optimización del Personal</h3>
+                    <p data-i18n="features.feature2desc">Asigna tareas, gestiona horarios y mejora la eficiencia del personal a través de herramientas intuitivas y análisis personalizado.</p>
+                </div>
+            </div>
+        </div>
 
-						<!-- Feature single start -->
-						<div class="col-md-6 col-sm-6">
-							<div class="feature-single feature-orange wow fadeInUp" data-wow-delay="0.6s">
-								<h4>03</h4>
-                            	<h3>Acceso a Servicios Intuitivos</h3>
-								<p>Ofrece servicios de manera accesible a tus huéspedes, permitiéndoles reservar actividades, solicitar asistencia y acceder a comodidades fácilmente.
+        <!-- Segunda fila con 2 características -->
+        <div class="row">
+            <!-- Característica 3 -->
+            <div class="col-md-6">
+                <div class="feature-single feature-orange wow fadeInUp" data-wow-delay="0.6s">
+                    <h4>03</h4>
+                    <h3 data-i18n="features.feature3">Acceso a Servicios Intuitivos</h3>
+                    <p data-i18n="features.feature3desc">Ofrece servicios de manera accesible a tus huéspedes, permitiéndoles reservar actividades, solicitar asistencia y acceder a comodidades fácilmente.</p>
+                </div>
+            </div>
 
-								</p>
-							</div>
-						</div>
-						<!-- Feature single end -->
+            <!-- Característica 4 -->
+            <div class="col-md-6">
+                <div class="feature-single feature-blue wow fadeInUp" data-wow-delay="0.8s">
+                    <h4>04</h4>
+                    <h3 data-i18n="features.feature4">Integración de Pagos Segura</h3>
+                    <p data-i18n="features.feature4desc">Procesa pagos de manera segura con soporte para múltiples métodos de pago, garantizando transacciones fluidas y confiables.</p>
+                </div>
+            </div>
+        </div>
 
-						<!-- Feature single start -->
-						<div class="col-md-6 col-sm-6">
-							<div class="feature-single feature-blue wow fadeInUp" data-wow-delay="0.8s">
-								<h4>04</h4>
-                            	<h3>Integración de Pagos Segura</h3>
-								<p> Procesa pagos de manera segura con soporte para múltiples métodos de pago, garantizando transacciones fluidas y confiables.</p>
-							</div>
-						</div>
-						<!-- Feature single end -->
-					</div>
-				</div>
+        <!-- Imagen ilustrativa -->
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <div class="awesome-features-image wow fadeInRight" data-wow-delay="0.4s">
+                    <img src="images/claves.png" alt="Imagen de Características Clave" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Awesome features section ends -->
 
-				<div class="col-md-6">
-					<!-- Awesome Feature Image start -->
-					<div class="awesome-features-image wow fadeInRight" data-wow-delay="0.4s">
-						<img src="images/claves.png" alt="" />
-					</div>
-					<!-- Awesome Feature Image end -->
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Awesome features section ends -->
 
 
 
@@ -362,7 +371,7 @@
 <div class="services" id="tech-stack">
     <div class="container">
         <div class="row" style="margin-bottom:20px">
-            <h2 class="section-title">Planes de Suscripción</h2>
+            <h2 class="section-title" data-i18n="pricing.title">Planes de Suscripción</h2>
             
             <div class="col-md-6">
                 <!-- Plan Gratuito Comienza -->
@@ -371,23 +380,23 @@
                         <div class="image-box">
                           <img src="images/zebraPlan.png" alt="Leoncillo" class="service-image">
                         </div>
-                        <h3>Plan Zebra</h3>
+                        <h3 data-i18n="pricing.plan1">Plan Zebra</h3>
                       </div>
                       
                       <div class="service-body abel-regular">
-                        <p>
+                        <p data-i18n="pricing.plan1desc">
                           Comienza con características básicas para la gestión hotelera a pequeña escala.
                           Perfecto para principiantes o pequeños hoteles.
                         </p>
                         <ul>
-                          <li>Gestión Básica de Reservas</li>
-                          <li>Soporte al Cliente Limitado</li>
-                          <li>Hasta 5 Cuentas de Usuario</li>
+                          <li data-i18n="pricing.plan1feature1">Gestión Básica de Reservas</li>
+                          <li data-i18n="pricing.plan1feature2">Soporte al Cliente Limitado</li>
+                          <li data-i18n="pricing.plan1feature3">Hasta 5 Cuentas de Usuario</li>
                         </ul>
                         <br>
                         <br>
                         <br>
-                        <a href="#" class="btn-download btn-learn-more flex items-center" onclick="notify('Plan Zebra')">Comienza Gratis</a>
+                        <a href="#" class="btn-download btn-learn-more flex items-center" onclick="notify('Plan Zebra')" data-i18n="pricing.plan1button">Comienza Gratis</a>
                       </div>
                 </div>
                 <!-- Plan Gratuito Termina -->
@@ -400,21 +409,21 @@
                         <div class="image-box">
                             <img src="images/leonplan.png" alt="León" class="service-image">
                         </div>
-                        <h3>Plan Leon</h3>
+                        <h3 data-i18n="pricing.plan2">Plan Leon</h3>
                     </div>
                     <div class="service-body">
-                        <p>
+                        <p data-i18n="pricing.plan2desc">
                             Desbloquea todas las características con nuestro Plan King por solo $32.90/mes.
                             Ideal para hoteles en crecimiento o de gran escala que buscan herramientas de gestión completas.
                         </p>
                         <ul>
-                            <li>Reservas Ilimitadas</li>
-                            <li>Soporte al Cliente Prioritario 24/7</li>
-                            <li>Analíticas y Reportes Avanzados</li>
-                            <li>Cuentas de Usuario Ilimitadas</li>
-                            <li>Acceso a Todas las Integraciones de Terceros</li>
+                            <li data-i18n="pricing.plan2feature1">Reservas Ilimitadas</li>
+                            <li data-i18n="pricing.plan2feature2">Soporte al Cliente Prioritario 24/7</li>
+                            <li data-i18n="pricing.plan2feature3">Analíticas y Reportes Avanzados</li>
+                            <li data-i18n="pricing.plan2feature4">Cuentas de Usuario Ilimitadas</li>
+                            <li data-i18n="pricing.plan2feature5">Acceso a Todas las Integraciones de Terceros</li>
                         </ul>
-                        <a href="#" class="btn-download btn-learn-more flex items-center" onclick="notify('Plan Leon')">Suscríbete Ahora por S/32.90/mes</a>
+                        <a href="#" class="btn-download btn-learn-more flex items-center" onclick="notify('Plan Leon')" data-i18n="pricing.plan2button">Suscríbete Ahora por S/32.90/mes</a>
                     </div>
                 </div>
                 <!-- Plan King Termina -->
@@ -427,16 +436,14 @@
 <script>
     function notify(plan) {
         Swal.fire({
-            title: '¡Gracias por tu interés!',
-            text: `Escríbenos para saber que estás interesado en nuestra futura app y el plan que quieres adquirir: ${plan}`,
+            title: i18next.t('alerts.interestTitle'),
+            text: i18next.t('alerts.interestText', { plan: plan }),
             icon: 'info',
             confirmButtonText: 'OK'
         });
     }
     </script>
 
-
-	
 
 
 	<!-- Screenshot section starts -->
@@ -446,7 +453,7 @@
             <div class="col-md-12">
                 <div class="section-title wow fadeInUp">
                     <h2>KingReserve</h2>
-                    <p>Tu oportunidad de crecer</p>
+                    <p data-i18n="screenshots.description">Tu oportunidad de crecer</p>
                 </div>
             </div>
         </div>
@@ -459,7 +466,7 @@
                         <div class="swiper-slide">
                             <div class="screenshot-slide text-center">
                                 <img src="images/7.png" alt="Descripción de la imagen 1" style="max-width: 100%; height: auto;">
-                                <p>Mejora la calidad de tus clientes</p>
+                                <p data-i18n="screenshots.slide1" >Mejora la calidad de tus clientes</p>
                             </div>
                         </div>
                         <!-- Image slide end -->
@@ -468,7 +475,7 @@
                         <div class="swiper-slide">
                             <div class="screenshot-slide text-center">
                                 <img src="images/8.png" alt="Descripción de la imagen 2" style="max-width: 100%; height: auto;">
-                                <p>Mejora la gestion de Tus Finanzas</p>
+                                <p data-i18n="screenshots.slide2" >Mejora la gestion de Tus Finanzas</p>
                             </div>
                         </div>
                         <!-- Image slide end -->
@@ -477,7 +484,7 @@
                         <div class="swiper-slide">
                             <div class="screenshot-slide text-center">
                                 <img src="images/6.png" alt="Descripción de la imagen 3" style="max-width: 100%; height: auto;">
-                                <p>Controla los detalles de tu Hotel</p>
+                                <p  data-i18n="screenshots.slide3" >Controla los detalles de tu Hotel</p>
                             </div>
                         </div>
                         <!-- Image slide end -->
@@ -486,7 +493,7 @@
                         <div class="swiper-slide">
                             <div class="screenshot-slide text-center">
                                 <img src="images/5.png" alt="Descripción de la imagen 4" style="max-width: 100%; height: auto;">
-                                <p>Gana en el mercado de competidores</p>
+                                <p data-i18n="screenshots.slide4" >Gana en el mercado de competidores</p>
                             </div>
                         </div>
                         <!-- Image slide end -->
@@ -512,7 +519,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title wow fadeInUp">
-                    <h2>¿Tienes preguntas?</h2>
+                    <h2 data-i18n="faq.title">¿Tienes preguntas?</h2>
                 </div>
             </div>
         </div>
@@ -522,11 +529,11 @@
                 <!-- Faq Single start -->
                 <div class="faq-single faq-pink wow fadeInUp" data-wow-delay="0.2s">
                     <div class="faq-title">
-                        <h3>¿Cómo puedo crear <br> una cuenta en KingReserve?</h3>
+                        <h3 data-i18n="faq.question1">¿Cómo puedo crear <br> una cuenta en KingReserve?</h3>
                     </div>
 
                     <div class="faq-entry">
-                        <p>Crear una cuenta en KingReserve es simple y gratuito. Solo haz clic en el botón "Regístrate" en la página principal, completa tus datos y sigue las instrucciones para finalizar el proceso de registro. Una vez registrado, puedes comenzar a gestionar las reservas de tu hotel de inmediato.</p>
+                        <p data-i18n="faq.answer1">Crear una cuenta en KingReserve es simple y gratuito. Solo haz clic en el botón "Regístrate" en la página principal, completa tus datos y sigue las instrucciones para finalizar el proceso de registro. Una vez registrado, puedes comenzar a gestionar las reservas de tu hotel de inmediato.</p>
                     </div>
                 </div>
                 <!-- Faq Single end -->
@@ -536,11 +543,11 @@
                 <!-- Faq Single start -->
                 <div class="faq-single faq-yellow wow fadeInUp" data-wow-delay="0.4s">
                     <div class="faq-title">
-                        <h3>¿Puedo cancelar o <br> modificar mi reserva?</h3>
+                        <h3 data-i18n="faq.question2">¿Puedo cancelar o <br> modificar mi reserva?</h3>
                     </div>
 
                     <div class="faq-entry">
-                        <p>Sí, puedes cancelar o modificar tu reserva a través de la aplicación de KingReserve. Simplemente inicia sesión en tu cuenta, ve a tu historial de reservas y selecciona la reserva que deseas cambiar. Sigue las indicaciones para realizar los ajustes o cancelaciones necesarias.</p>
+                        <p data-i18n="faq.answer2">Sí, puedes cancelar o modificar tu reserva a través de la aplicación de KingReserve. Simplemente inicia sesión en tu cuenta, ve a tu historial de reservas y selecciona la reserva que deseas cambiar. Sigue las indicaciones para realizar los ajustes o cancelaciones necesarias.</p>
                     </div>
                 </div>
                 <!-- Faq Single end -->
@@ -550,11 +557,11 @@
                 <!-- Faq Single start -->
                 <div class="faq-single faq-skyblue wow fadeInUp" data-wow-delay="0.6s">
                     <div class="faq-title">
-                        <h3>¿Qué métodos de pago <br> se aceptan en KingReserve?</h3>
+                        <h3 data-i18n="faq.question3">¿Qué métodos de pago <br> se aceptan en KingReserve?</h3>
                     </div>
 
                     <div class="faq-entry">
-                        <p>Aceptamos una variedad de métodos de pago, incluyendo tarjetas (crédito y débito), transferencias bancarias en línea, y billeteras digitales populares. Todos los pagos se procesan de forma segura para proteger tu información financiera. Recibirás un correo de confirmación una vez que se complete tu pago.</p>
+                        <p data-i18n="faq.answer3">Aceptamos una variedad de métodos de pago, incluyendo tarjetas (crédito y débito), transferencias bancarias en línea, y billeteras digitales populares. Todos los pagos se procesan de forma segura para proteger tu información financiera. Recibirás un correo de confirmación una vez que se complete tu pago.</p>
                     </div>
                 </div>
                 <!-- Faq Single end -->
@@ -571,8 +578,8 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="section-title wow fadeInUp">
-						<h2>Conectate con KingGroup</h2>
-						<p>
+						<h2 data-i18n="social.title">Conectate con KingGroup</h2>
+						<p data-i18n="social.description">
 							Conéctese con nosotros en las redes sociales para mantenerse actualizado sobre los últimos desarrollos de KingReserve, la aplicación desarrollada por KingGroup. Compartamos conocimientos e ideas para mejorar las experiencias y resolver problemas globales, uno a la vez. Únase a nuestra comunidad y sea parte de la innovación en la gestión hotelera.
 
 						</p>
@@ -584,7 +591,7 @@
 				<div class="col-md-3 col-sm-6">
 					<!-- Social single start -->
 					<div class="follow-social-single fs-facebook wow fadeInUp" data-wow-delay="0.2s">
-						<h3>Follow on GitHub</h3>
+						<h3 data-i18n="social.github">Siguenos en GitHub</h3>
 						<a href="https://github.com/KingGroupOficial"><i class="fa fa-github"></i> GitHub</a>
 					</div>
 					<!-- Social single end -->
@@ -593,7 +600,7 @@
 				<div class="col-md-3 col-sm-6">
 					<!-- Social single start -->
 					<div class="follow-social-single fs-youtube wow fadeInUp" data-wow-delay="0.4s">
-						<h3>Subscribe on Youtube</h3>
+						<h3 data-i18n="social.youtube">Subscribete on Youtube</h3>
 						<a href="https://www.youtube.com/channel/UCt2m9qj07rd_AlIlDl-thMg"><i class="fa fa-youtube"></i>
 							Youtube</a>
 					</div>
@@ -603,7 +610,7 @@
 				<div class="col-md-3 col-sm-6">
 					<!-- Social single start -->
 					<div class="follow-social-single fs-twitter wow fadeInUp" data-wow-delay="0.6s">
-						<h3>Connect on LinkedIn</h3>
+						<h3 data-i18n="social.linkedin">Conectate en LinkedIn</h3>
 						<a href="linkedin.com/in/maykol-jhordan-rojas-velasquez-7594a52a2"><i class="fa fa-linkedin"></i>
 							LinkedIn</a>
 					</div>
@@ -613,7 +620,7 @@
 				<div class="col-md-3 col-sm-6">
 					<!-- Social single start -->
 					<div class="follow-social-single fs-whatsapp wow fadeInUp" data-wow-delay="0.8s">
-						<h3>Chat on Whatsapp</h3>
+						<h3 data-i18n="social.whatsapp">Chat para  Whatsapp</h3>
 						<a href="https://chat.whatsapp.com/Kz2yOwMhhEs14AUynUbXkj"><i class="fa fa-whatsapp"></i> WhatsApp</a>
 					</div>
 					<!-- Social single end -->
@@ -629,9 +636,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title wow fadeInUp">
-                    <h2><br><br>Prueba KingReserve</h2>
-                    <p>Explora el último software de gestión hotelera - KingReserve</p>
-                    <p>Puedes probar KingReserve en diferentes navegadores para una experiencia óptima.</p>
+                    <h2 data-i18n="downloadApp.title"><br><br>Prueba KingReserve</h2>
+                    <p data-i18n="downloadApp.description1">Explora el último software de gestión hotelera - KingReserve</p>
+                    <p data-i18n="downloadApp.description2">Puedes probar KingReserve en diferentes navegadores para una experiencia óptima.</p>
                 </div>
             </div>
         </div>
@@ -655,108 +662,130 @@
 <script>
 function showMessage() {
     Swal.fire({
-        title: 'Construyendo',
-        text: 'Una aplicación digna de un rey. Aplicación en desarrollo.',
+        title: i18next.t('alerts.buildingTitle'),
+        text: i18next.t('alerts.buildingText'),
         icon: 'info',
         confirmButtonText: 'OK'
     });
 }
 </script>
 
-<!-- Sección de Contáctenos Comienza -->
+<!-- Formulario de Contacto Modificado -->
 <section class="contact-us" id="contact">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <div class="section-title wow fadeInUp">
-                    <h2><br> Contacta al Desarrollador</h2>
-                    <p>¿Tienes una pregunta, una observación o una solicitud de colaboración? Envíanos un mensaje.</p>
+                    <h2 data-i18n="contact.title"><br> Contacta al Desarrollador</h2>
+                    <p data-i18n="contact.description">¿Tienes una pregunta, una observación o una solicitud de colaboración? Envíanos un mensaje.</p>
                 </div>
             </div>
         </div>
 
-        <div class="col-md-12">
-            <!-- Contact form start -->
-            <div class="contact-form">
-                <form id="contactForm" action="" method="post" data-toggle="validator">
-                    <div class="row">
-                        <div class="form-group col-md-6 col-sm-12">
-                            <input type="text" name="first_name" id="first_name" class="form-control"
-                                placeholder="Nombres" required>
-                            <div class="help-block with-errors"></div>
-                        </div>
-
-                        <div class="form-group col-md-6 col-sm-12">
-                            <input type="text" name="last_name" id="last_name" class="form-control"
-                                placeholder="Apellidos" required>
-                            <div class="help-block with-errors"></div>
-                        </div>
-
-                        <div class="form-group col-md-12 col-sm-12">
-                            <input type="email" name="email" id="email" class="form-control"
-                                placeholder="Correo Electrónico" autocomplete="email" required>
-                            <div class="help-block with-errors"></div>
-                        </div>
-
-                        <div class="form-group col-md-12 col-sm-12">
-                            <textarea rows="6" name="message" id="message" class="form-control"
-                                placeholder="¿Cómo podemos ayudarte?" required></textarea>
-                            <div class="help-block with-errors"></div>
-                        </div>
-
-                        <div class="col-md-12 col-sm-12 text-center">
-                            <button type="submit" class="btn-custom" title="Enviar tu mensaje!">Enviar
-                                Mensaje</button>
-                            <div id="msgSubmit" class="h3 text-left hidden"></div>
-                        </div>
+        <div class="col-md-12"></div>
+        <!-- Inicio del Formulario de Contacto -->
+        <div class="contact-form">
+            <form id="contactForm" action="" method="post" data-toggle="validator" novalidate>
+                <div class="row">
+                    <div class="form-group col-md-6 col-sm-12">
+                        <input type="text" name="first_name" id="first_name" data-i18n="contact.firstname" class="form-control" placeholder="Nombres" required>
+                        <div class="help-block with-errors"></div>
                     </div>
-                </form>
-            </div>
-            <!-- Contact Form end -->
+
+                    <div class="form-group col-md-6 col-sm-12">
+                        <input type="text" name="last_name" id="last_name" data-i18n="contact.lastname" class="form-control" placeholder="Apellidos" required>
+                        <div class="help-block with-errors"></div>
+                    </div>
+
+                    <div class="form-group col-md-12 col-sm-12">
+                        <input type="email" name="email" id="email" data-i18n="contact.email" class="form-control" placeholder="Correo Electrónico" autocomplete="email" required>
+                        <div class="help-block with-errors"></div>
+                    </div>
+
+                    <div class="form-group col-md-12 col-sm-12">
+                        <textarea rows="6" name="message" id="message" data-i18n="contact.message" class="form-control" placeholder="¿Cómo podemos ayudarte?" required></textarea>
+                        <div class="help-block with-errors"></div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 text-center">
+                        <button type="submit" class="btn-custom" title="Enviar tu mensaje!" data-i18n="contact.button" id="submitButton" disabled>Enviar Mensaje</button>
+                        <div id="msgSubmit" class="h3 text-left hidden"></div>
+                    </div>
+                </div>
+            </form>
         </div>
+        <!-- Fin del Formulario de Contacto -->
     </div>
+</div>
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const firstName = document.getElementById("first_name");
+    const lastName = document.getElementById("last_name");
+    const email = document.getElementById("email");
+    const submitButton = document.getElementById("submitButton");
+
+    // Función para verificar si los campos están completos
+    function checkFormCompletion() {
+        if (firstName.value.trim() !== "" && lastName.value.trim() !== "" && email.value.trim() !== "") {
+            submitButton.disabled = false;  // Habilitar el botón si todos los campos están llenos
+        } else {
+            submitButton.disabled = true;  // Deshabilitar el botón si falta algún campo
+        }
+    }
+
+    // Añadir eventos de entrada a cada campo para activar la función de verificación
+    firstName.addEventListener("input", checkFormCompletion);
+    lastName.addEventListener("input", checkFormCompletion);
+    email.addEventListener("input", checkFormCompletion);
     
-    <script>
-
-        const contactForm = document.querySelector('form');
-
-        contactForm.addEventListener('submit', (e) => {
+    // Manejo del evento submit
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', (e) => {
+        // Verificar si el formulario es válido
+        if (!contactForm.checkValidity()) {
             e.preventDefault();
+            contactForm.reportValidity(); // Mostrar mensajes de validación nativos del navegador
+            return;
+        }
 
-            // Ajusta los IDs de los campos aquí
-            const nombre = document.getElementById('first_name').value;
-            const apellido = document.getElementById('last_name').value;
-            const email = document.getElementById('email').value;
-            const mensaje = document.getElementById('message').value;
+        e.preventDefault();
 
-            db.collection('contactos').add({
-                nombre: nombre,
-                apellido: apellido,
-                email: email,
-                mensaje: mensaje,
-                timestamp: firebase.firestore.FieldValue.serverTimestamp()
-            }).then(() => {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Mensaje enviado',
-                    text: 'Tu mensaje ha sido enviado con éxito.',
-                    showConfirmButton: false,
-                    timer: 1500
-                });
-                contactForm.reset();
-            }).catch((error) => {
-                console.error('Error al enviar el mensaje: ', error);
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text: 'Hubo un error al enviar el mensaje.',
-                });
+        // Ajusta los IDs de los campos aquí
+        const nombre = document.getElementById('first_name').value;
+        const apellido = document.getElementById('last_name').value;
+        const email = document.getElementById('email').value;
+        const mensaje = document.getElementById('message').value;
+
+        db.collection('contactos').add({
+            nombre: nombre,
+            apellido: apellido,
+            email: email,
+            mensaje: mensaje,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp()
+        }).then(() => {
+            Swal.fire({
+                icon: 'success',
+                title: i18next.t('alerts.successTitle'),
+                text: i18next.t('alerts.successText'),
+                showConfirmButton: false,
+                timer: 1500
+            });
+            contactForm.reset();
+        }).catch((error) => {
+            console.error('Error al enviar el mensaje: ', error);
+            Swal.fire({
+                icon: 'error',
+                title: i18next.t('alerts.errorTitle'),
+                text: i18next.t('alerts.errorText'),
             });
         });
-    </script>
+    });
+});
+</script>
 </section>
 <!-- Sección de Contáctenos Termina -->
+
 
 
 	<!-- Footer section starts -->
@@ -776,7 +805,7 @@ function showMessage() {
 					<div class="footer-info wow fadeInUp">
 						
 
-						<p>&copy; 2024 Developed by KingGroup</p>
+						<p data-i18n="footer.developedby">&copy; 2024 Desarrolado por KingGroup</p>
 					</div>
 				</div>
 				<!-- Footer info end -->
@@ -815,6 +844,8 @@ function showMessage() {
 	<script src="js/SmoothScroll.js"></script>
 	<!-- Main Custom js file -->
 	<script src="js/function.js"></script>
+    <!-- i18n -->
+     <script src="js/i18n.js"></script>
 	
 </body>
 
