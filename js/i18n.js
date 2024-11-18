@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         "contact": "Contact Us"
                     },
                     "hero": {
-                        "title": "HOTEL REVOLUTION"
+                        "title": "HOTEL REVOLUTION",
+                        "subtitule" : "KingGroup presents KingReserve: the platform that transforms hotel management into an efficient, intuitive, and innovative experience, raising the standard of modern hospitality."
                     },
                     "header": {
                         "weare": "We are",
@@ -104,7 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             "description2": "You can try KingReserve in different browsers for an optimal experience."
                         },
                     "contact": {  
-                            "title": "Contact the Developer",  
+                            "title": "Contact us",  
                             "description": "Do you have a question, a comment, or a collaboration request? Send us a message.",  
                             "firstname": "First Name",  
                             "lastname": "Last Name",  
@@ -139,7 +140,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         "contact": "Contáctanos"
                     },
                     "hero": {
-                        "title": "REVOLUCIÓN HOTELERA"
+                        "title": "REVOLUCIÓN HOTELERA",
+                        "subtitule" : "KingGroup presenta KingReserve: la plataforma que transforma la gestión hotelera en una experiencia eficiente, intuitiva e innovadora, elevando el estándar de la hospitalidad moderna."
+
                     },
                     "header": {
                         "weare": "Somos",
@@ -230,7 +233,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             "description2": "Puedes probar KingReserve en diferentes navegadores para una experiencia óptima."
                         },
                     "contact": {  
-                        "title": "Contacta al Desarrollador",  
+                        "title": "Contactanos",  
                         "description": "¿Tienes una pregunta, una observación o una solicitud de colaboración? Envíanos un mensaje.",  
                         "firstname": "Nombres",  
                         "lastname": "Apellidos",  
