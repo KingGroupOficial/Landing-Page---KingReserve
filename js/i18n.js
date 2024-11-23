@@ -14,7 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     },
                     "hero": {
                         "title": "HOTEL REVOLUTION",
-                        "subtitule" : "KingGroup presents KingReserve: the platform that transforms hotel management into an efficient, intuitive, and innovative experience, raising the standard of modern hospitality."
+                        "subtitule" : "KingGroup presents KingReserve: the platform that transforms hotel management into an efficient, intuitive, and innovative experience, raising the standard of modern hospitality.",
+                        "buttonStart" : "Start"
                     },
                     "header": {
                         "weare": "We are",
@@ -125,6 +126,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         "successText": "Your message has been sent successfully.",
                         "errorTitle": "Error",
                         "errorText": "There was an error sending the message."
+                    },
+                    "dedicatoria" : {
+                        "message": "This project is dedicated to all those who dream of growing, pushing their own limits, and building a future full of opportunities. To those who face challenges with courage and determination, and never stop believing in their dreams. Thank you for trusting us to be part of your success. May this be just the beginning of a journey filled with achievements and fulfillment."
                     }
                 }
             },
@@ -141,7 +145,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     },
                     "hero": {
                         "title": "REVOLUCIÓN HOTELERA",
-                        "subtitule" : "KingGroup presenta KingReserve: la plataforma que transforma la gestión hotelera en una experiencia eficiente, intuitiva e innovadora, elevando el estándar de la hospitalidad moderna."
+                        "subtitule" : "KingGroup presenta KingReserve: la plataforma que transforma la gestión hotelera en una experiencia eficiente, intuitiva e innovadora, elevando el estándar de la hospitalidad moderna.",
+                        "buttonStart" : "Comenzar"
 
                     },
                     "header": {
@@ -253,6 +258,9 @@ document.addEventListener('DOMContentLoaded', function() {
                         "successText": "Tu mensaje ha sido enviado con éxito.",
                         "errorTitle": "Error",
                         "errorText": "Hubo un error al enviar el mensaje."
+                    },
+                    "dedicatoria" : {
+                        "message": "Este proyecto está dedicado a todos aquellos que sueñan con crecer, superar sus propios límites y construir un futuro lleno de oportunidades. A quienes enfrentan los desafíos con valentía y determinación, y nunca dejan de creer en sus sueños. Gracias por confiar en nosotros para formar parte de tu éxito. Que este sea solo el comienzo de un camino lleno de logros y satisfacciones."
                     }
                 }
             }
